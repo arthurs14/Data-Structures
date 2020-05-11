@@ -1,7 +1,5 @@
 // PROS: insert and delete can be quick
 // CONS: slow to get nth element O(n) linear time
-// Doubly Linked Lists -> each element links the last element
-
 
 // Bare Bones Example //
 /*
@@ -62,6 +60,34 @@ class LinkedList {
   }
 
   // Insert at index
+  insertAt(data, index) {
+    //if index is out of range
+    if (index > 0 && index > this.size) {
+      return;
+    }
+
+    // if first index (0)
+    if(index === 0) {
+      this.insertFirst(data);
+      return;
+    }
+
+    const node = new Node(data);
+    let current, previous;
+    // set current to first
+    current = this.head;
+    let count = 0;
+
+    while(count < index) {
+      previous = current; // node before index
+      count++;
+      current = current.next; // node after index
+    }
+
+    node.next = current;
+    previous.next = node;
+    this.size++;
+  }
 
   // Get at index
 
@@ -86,4 +112,5 @@ LL.insertFirst(100);
 LL.insertFirst(200);
 LL.insertFirst(300);
 LL.insertLast(400);
+LL.insertAt(500, 10);
 LL.printListData();
