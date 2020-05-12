@@ -9,6 +9,7 @@ class Node {
   constructor (data, next = null) {
     this.data = data;
     this.next = next;
+    // creates an object { data: data, next: null }
   }
 }
 
@@ -19,36 +20,45 @@ class LinkedList {
   }
 
   // Insert first node
+  // If other nodes exists, it will put in front
   insertFirst(data) {
+    // set the head of the list with the new data along with the old data
+    // increase linkedlist size
     this.head = new Node(data, this.head);
     this.size++;
   }
 
   // Insert last node
+  // Puts node at the end of the list
   insertLast(data) {
+    // create a node for new data
     let node = new Node(data);
     let current;
 
-    // If empty, make head
+    // If empty, make it the head
     if(!this.head) {
       this.head = node;
     } else {
-      // if head exists
+      // if head node exists, set current to head
       current = this.head;
 
+      // traverse the list
       while(current.next) {
         current = current.next;
       }
 
+      // once you leave the while loop -> should be at end of list
+      // add the new node
       current.next = node;
     }
 
+    // increase the linkedlist
     this.size++;
   }
 
   // Insert at index
   insertAt(data, index) {
-    //if index is out of range
+    // check if index is out of range
     if (index > 0 && index > this.size) {
       return;
     }
@@ -59,6 +69,7 @@ class LinkedList {
       return;
     }
 
+    // if index is not 0 but within linkedlist size
     const node = new Node(data);
     let current, previous;
     // set current to first
@@ -71,8 +82,8 @@ class LinkedList {
       current = current.next; // node after index
     }
 
-    node.next = current;
-    previous.next = node;
+    node.next = current; // push current up 1
+    previous.next = node; // add new node to what current was at
     this.size++;
   }
 
@@ -81,12 +92,13 @@ class LinkedList {
     let current = this.head;
     let count = 0;
 
+    // traverse list
     while(current) {
       if(count === index) {
-        console.log(current.data);
+        console.log(current.data); // show value at index
       }
-      count++;
-      current = current.next;
+      count++; // increase until index reached
+      current = current.next; // keep assigning until current no longer exists
     }
 
     return null;
@@ -146,7 +158,7 @@ LL.insertLast(400);
 
 // LL.removeAt(33);
 
-LL.clearList();
+// LL.clearList();
 
 LL.printListData();
 // LL.getAt(0);
