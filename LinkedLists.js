@@ -1,21 +1,8 @@
 // PROS: insert and delete can be quick
 // CONS: slow to get nth element O(n) linear time
 
-// Bare Bones Example //
-/*
-const n1 = {
-  data: 100,
-};
+// Data structure: { data: 100, next: { data: 200 } }
 
-const n2 = {
-  data: 200,
-};
-
-n1.next = n2;
-
-// { data: 100, next: { data: 200 } }
-// console.log(n1);
-*/
 
 // Example //
 class Node {
