@@ -77,10 +77,54 @@ class LinkedList {
   }
 
   // Get at index
+  getAt(index) {
+    let current = this.head;
+    let count = 0;
+
+    while(current) {
+      if(count === index) {
+        console.log(current.data);
+      }
+      count++;
+      current = current.next;
+    }
+
+    return null;
+  }
 
   // Remove at index
+  removeAt(index) {
+    // check if index is in range
+    if(index > 0 && index > this.size) {
+      return;
+    }
+
+    let current = this.head; // set current to first node
+    let previous;
+    let count = 0;
+
+    // if index is first node
+    if(index === 0) {
+      this.head = current.next;
+    } else {
+      // if index is not first node
+      while (count < index) {
+        count++;
+        previous = current; // sets previous to current node
+        current = current.next; // moves current to next node
+      }
+
+      previous.next = current.next; // this sets the new node to where the old was
+    }
+
+    this.size--; // reduce size of linkedlist to reflect deletion
+  }
 
   // Clear List
+  clearList() {
+    this.head = null; // by setting to null -> reference to list is gone
+    this.size = 0; // set list size to 0
+  }
 
   // Print list data
   printListData() {
@@ -99,5 +143,10 @@ LL.insertFirst(100);
 LL.insertFirst(200);
 LL.insertFirst(300);
 LL.insertLast(400);
-LL.insertAt(500, 10);
+
+// LL.removeAt(33);
+
+LL.clearList();
+
 LL.printListData();
+// LL.getAt(0);
