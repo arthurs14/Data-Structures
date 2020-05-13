@@ -1,7 +1,7 @@
 // STACK
 // LIFO -> Last In First Out (think of stack of plates)
+// Linear Data Structure
 // Typical methods of stacks -> push, pop, peek
-
 
 class Stack {
   storage = {};
