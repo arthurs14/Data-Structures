@@ -25,6 +25,16 @@ class Stack {
   peek = () => {
     return this.storage[this.size];
   }
+
+  empty = () => {
+    if(storage === null) {
+      return;
+    }
+  }
+
+  getSize = () => {
+    return this.size;
+  }
 }
 
 
@@ -36,3 +46,4 @@ stack.push('microphone');
 console.log(stack.pop()); // microphone
 
 console.log(stack); // storage -> { '1': 'keyboard', '2': 'mouse' }
+
