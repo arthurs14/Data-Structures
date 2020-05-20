@@ -99,23 +99,31 @@ class BST {
     return false;
   }
 
-  // depth first search
+  // depth first search - branch by branch
   // in-order
+  // left, root, right
+  // 2, 3, 12, 15, 28, 36, 39
   dfsInOrder = () => {
 
   }
 
   // pre-order
+  // root -> left -> right
+  // 15, 3, 2, 12, 36, 28, 39
   dfsPreOrder = () => {
 
   }
 
   // post-order
+  // left, right, root
+  // 2, 12, 3, 28, 39, 36, 15
   dfsPostOrder = () => {
 
   }
 
-  // breadth first search
+  // breadth first search - level by level
+  // use queue
+  // 15, 3, 36, 2, 12, 28, 39
   bfs = () => {
 
   }
