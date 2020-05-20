@@ -16,12 +16,40 @@ class BST {
     this.count = 0; // how many nodes are in the tree
   }
 
+  // gets the amount of nodes in the tree
   size = () => {
-
+    return this.count;
   }
 
-  insert = () => {
+  // adds the value to the tree
+  insert = (value) => {
+    this.count++;
 
+    let newNode = new Node(value);
+
+    const searchTree = node => {
+      // if value < node.value, go left
+      if (value < node.value) {
+        // if no left child, append new node
+        if (!node.left) {
+          node.left = newNode;
+        } else {
+          // if left child, look left again
+          searchTree(node.left);
+        }
+      } else if (value > node.value) {
+        // if value > node.value go right
+        // if no right child, append new node
+        if(!node.right) {
+          node.right = newNode;
+        } else {
+          // if right child, look right again
+          searchTree(node.right);
+        }
+      }
+
+      searchTree(this.root);
+    }
   }
 
   min = () => {
