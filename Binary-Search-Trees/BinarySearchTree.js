@@ -65,9 +65,12 @@ class BST {
     return currentNode.value;
   }
 
+  // to find max -> start at root and go right until you reach the max value
   max = () => {
+    // start at root of tree
     let currentNode = this.root;
 
+    // loop until you reach the right most value
     while(currentNode.right) {
       currentNode = currentNode.right;
     }
@@ -75,8 +78,25 @@ class BST {
     return currentNode.value;
   }
 
-  contains = () => {
+  // takes a value to check to see if value exists in the tree
+  contains = (value) => {
+    let currentNode = this.root;
 
+    while(currentNode) {
+      // if current node equals value return true
+      if (value === currentNode.value) {
+        return true;
+      }
+
+      // if value is less than current go left
+      if (value < currentNode.value) {
+        currentNode = currentNode.left;
+      } else {
+        // if value is more than current go left
+        currentNode = currentNode.right;
+      }
+    }
+    return false;
   }
 
   // depth first search
