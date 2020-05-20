@@ -104,7 +104,20 @@ class BST {
   // left, root, right
   // 2, 3, 12, 15, 28, 36, 39
   dfsInOrder = () => {
+    let result = [];
 
+    const traverse = node => {
+      // if left node exists, go left again
+      if (node.left) traverse(node.left);
+
+      // capture root node value
+      result.push(node.value);
+
+      // if right node exists, go right again
+      if (node.right) traverse(node.right);
+    };
+
+    return result;
   }
 
   // pre-order
