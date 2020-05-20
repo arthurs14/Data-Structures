@@ -12,7 +12,7 @@ class Node {
 
 class BST {
   constructor(value) {
-    this.root = new Node(value);
+    this.root = new Node(value); // the top of the tree
     this.count = 0; // how many nodes are in the tree
   }
 
@@ -52,12 +52,27 @@ class BST {
     }
   }
 
+  // to find the minimum start at root and go left until you reach the lowest
+  // value
   min = () => {
+    let currentNode = this.root; // start at top of tree
 
+    // while left child node exists
+    while(currentNode.left) {
+      currentNode = currentNode.left;
+    }
+
+    return currentNode.value;
   }
 
   max = () => {
+    let currentNode = this.root;
 
+    while(currentNode.right) {
+      currentNode = currentNode.right;
+    }
+
+    return currentNode.value;
   }
 
   contains = () => {
