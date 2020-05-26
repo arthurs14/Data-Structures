@@ -116,6 +116,8 @@ class BST {
       if (node.right) traverse(node.right);
     };
 
+    traverse(this.root);
+
     return result;
   }
 
@@ -136,6 +138,8 @@ class BST {
       // if right node exists, go right again
       if (node.right) traverse(node.right);
     };
+
+    traverse(this.root);
 
     return result;
   }
@@ -158,6 +162,8 @@ class BST {
       result.push(node.value);
     };
 
+    traverse(this.root);
+
     return result;
   }
 
@@ -174,7 +180,7 @@ class BST {
     while(queue.length) {
       let currentNode = queue.shift();
 
-      result.push(currentNode);
+      result.push(currentNode.value);
 
       if (currentNode.left) {
         queue.push(currentNode.left);
@@ -183,7 +189,6 @@ class BST {
       if (currentNode.right) {
         queue.push(currentNode.right);
       }
-
     }
 
     return result;
@@ -203,3 +208,19 @@ bst.insert(39);
 console.log('total nodes:', bst.size());
 console.log('min value:', bst.min());
 console.log('max value:', bst.max());
+
+console.log('contains 2? ->', bst.contains(2));
+console.log('contains 9? ->', bst.contains(9));
+
+// in-order: 2, 3, 12, 15, 28, 36, 39
+console.log('in-order ->', bst.dfsInOrder());
+
+// pre-order: 15, 3, 2, 12, 36, 28, 39
+console.log('pre-order ->', bst.dfsPreOrder());
+
+// post-order: 2, 12, 3, 28, 39, 36, 15
+console.log('post-order ->', bst.dfsPostOrder());
+
+// Breadth first search
+// 15, 3, 36, 2, 12, 28, 39
+console.log('breadth first search ->', bst.bfs());
