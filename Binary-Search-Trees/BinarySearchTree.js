@@ -3,7 +3,7 @@
 // naturally stay sorted
 
 class Node {
-  constructor () {
+  constructor (value) {
     this.value = value;
     this.left = null;
     this.right = null;
@@ -13,7 +13,7 @@ class Node {
 class BST {
   constructor(value) {
     this.root = new Node(value); // the top of the tree
-    this.count = 0; // how many nodes are in the tree
+    this.count = 1; // how many nodes are in the tree
   }
 
   // gets the amount of nodes in the tree
@@ -47,9 +47,8 @@ class BST {
           searchTree(node.right);
         }
       }
-
-      searchTree(this.root);
     }
+    searchTree(this.root);
   }
 
   // to find the minimum start at root and go left until you reach the lowest
@@ -166,6 +165,41 @@ class BST {
   // use queue
   // 15, 3, 36, 2, 12, 28, 39
   bfs = () => {
+    let result = [];
+    let queue = [];
 
+
+    queue.push(this.root);
+
+    while(queue.length) {
+      let currentNode = queue.shift();
+
+      result.push(currentNode);
+
+      if (currentNode.left) {
+        queue.push(currentNode.left);
+      }
+
+      if (currentNode.right) {
+        queue.push(currentNode.right);
+      }
+
+    }
+
+    return result;
   }
 }
+
+const bst = new BST(15); // inserts as root node
+
+
+bst.insert(3);
+bst.insert(36);
+bst.insert(2);
+bst.insert(12);
+bst.insert(28);
+bst.insert(39);
+
+console.log('total nodes:', bst.size());
+console.log('min value:', bst.min());
+console.log('max value:', bst.max());
