@@ -124,14 +124,42 @@ class BST {
   // root -> left -> right
   // 15, 3, 2, 12, 36, 28, 39
   dfsPreOrder = () => {
+    let result = [];
 
+    const traverse = node => {
+      // capture root node value
+      result.push(node.value);
+
+      // if left node exists, go left again
+      if (node.left) traverse(node.left);
+
+
+      // if right node exists, go right again
+      if (node.right) traverse(node.right);
+    };
+
+    return result;
   }
 
   // post-order
   // left, right, root
   // 2, 12, 3, 28, 39, 36, 15
   dfsPostOrder = () => {
+    let result = [];
 
+    const traverse = node => {
+      // if left node exists, go left again
+      if (node.left) traverse(node.left);
+
+
+      // if right node exists, go right again
+      if (node.right) traverse(node.right);
+
+      // capture root node value
+      result.push(node.value);
+    };
+
+    return result;
   }
 
   // breadth first search - level by level
