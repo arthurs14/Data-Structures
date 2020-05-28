@@ -44,7 +44,17 @@ class PriorityQueue {
       this.items.push(qElement);
     }
   }
-  // dequeue()
+
+  // remove element from the queue
+  dequeue = () => {
+    // return deleted element and remove it
+    // if queue empty -> erturn underflow?
+    if (this.isEmpty()) {
+      return "underflow";
+    }
+    return this.items.shift();
+  }
+  
   // front()
   // isEmpty()
   // printPQueue()
