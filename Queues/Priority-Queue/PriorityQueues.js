@@ -7,20 +7,43 @@
 // front of the queue.
 
 // store element and its priority
-class EQlement {
+class QElement {
   constructor(element, priority) {
     this.element = element;
     this.priority = priority;
   }
 }
 
+// where the elements will be saved
 class PriorityQueue {
   constructor() {
     this.items = [];
   }
 
   // functions to be implemented
-  // enqueue(item priority)
+  // adds elements to the queue as per priority
+  enqueue = () => {
+    // create queue element
+    let qElement = new QElement;
+    let contain = false;
+
+    // iterate through the entire item array to add element at the correct
+    // location of the Queue
+    for (let i = 0; this.items.length; i++) {
+      if (this.items[i].priority > qElement.priority) {
+        // once the correct location found -> add element
+        //splice(start, delete, addItem)
+        this.items.splice(i, 0, qElement);
+        contain = true;
+        break;
+      }
+    }
+    // if element is the highest priority
+    // add to the end of the queue
+    if(!contain) {
+      this.items.push(qElement);
+    }
+  }
   // dequeue()
   // front()
   // isEmpty()
