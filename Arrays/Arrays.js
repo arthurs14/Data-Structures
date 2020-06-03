@@ -31,8 +31,20 @@ class Array {
   }
 
   // inserts element at certain index
-  insertAt = () => {
+  insertAt = (index, item) => {
+    // loop until it reaches index to modify
+    for (let i = this.length; i >= index; i--) {
+      // sets a new length to the object while opening the modified index
+      this.data[i] = this.data[i - 1];
+    }
 
+    // add value to empty index
+    this.data[index] = item;
+
+    // increase length
+    this.length++;
+
+    return this.data;
   }
 
   // deletes element at the certain index
