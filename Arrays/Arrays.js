@@ -59,13 +59,17 @@ class Array {
 
     // update the length of array
     this.length--;
-    
+
     return this.data;
   }
 
   // return element at index
-  getElementAtIndex = () => {
+  getElementAtIndex = (index) => {
+    return this.data[index];
+  }
 
+  getData = () => {
+    return this.data;
   }
 }
 
@@ -76,4 +80,5 @@ test.push(2);
 test.push(3);
 test.push(4);
 
-console.log(test.deleteAt(2));
+console.log(test.getData());
+console.log(test.getElementAtIndex(2));
