@@ -48,8 +48,19 @@ class Array {
   }
 
   // deletes element at the certain index
-  deleteAt = () => {
+  deleteAt = (index) => {
+    // moves everything from the index modified to the right index
+    for (let i = index; i < this.length - 1; i++) {
+      this.data[i] = this.data[i + 1];
+    }
 
+    // deletes the last index which has the old value before the deletion
+    delete this.data[this.length - 1]
+
+    // update the length of array
+    this.length--;
+    
+    return this.data;
   }
 
   // return element at index
@@ -57,3 +68,12 @@ class Array {
 
   }
 }
+
+let test = new Array()
+test.push(0);
+test.push(1);
+test.push(2);
+test.push(3);
+test.push(4);
+
+console.log(test.deleteAt(2));
