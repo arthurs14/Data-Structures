@@ -80,5 +80,7 @@ test.push(2);
 test.push(3);
 test.push(4);
 
-console.log(test.getData());
-console.log(test.getElementAtIndex(2));
+console.log('delete last value in array:',test.pop());
+console.log('insert 3 at index 1', test.insertAt(1, 3));
+console.log('delete 3 from index 1', test.deleteAt(1));
+console.log('element at index 2:', test.getElementAtIndex(2));
