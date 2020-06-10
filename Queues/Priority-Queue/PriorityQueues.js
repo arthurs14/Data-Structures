@@ -22,7 +22,7 @@ class PriorityQueue {
 
   // functions to be implemented
   // adds elements to the queue as per priority
-  enqueue = () => {
+  enqueue() {
     // create queue element
     let qElement = new QElement;
     let contain = false;
@@ -46,7 +46,7 @@ class PriorityQueue {
   }
 
   // remove element from the queue
-  dequeue = () => {
+  dequeue() {
     // return deleted element and remove it
     // if queue empty -> erturn underflow?
     if (this.isEmpty()) {
@@ -54,7 +54,7 @@ class PriorityQueue {
     }
     return this.items.shift();
   }
-  
+
   // front()
   // isEmpty()
   // printPQueue()

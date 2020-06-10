@@ -17,12 +17,12 @@ class BST {
   }
 
   // gets the amount of nodes in the tree
-  size = () => {
+  size() {
     return this.count;
   }
 
   // adds the value to the tree
-  insert = (value) => {
+  insert(value) {
     this.count++;
 
     let newNode = new Node(value);
@@ -53,7 +53,7 @@ class BST {
 
   // to find the minimum start at root and go left until you reach the lowest
   // value
-  min = () => {
+  min() {
     let currentNode = this.root; // start at top of tree
 
     // while left child node exists
@@ -65,7 +65,7 @@ class BST {
   }
 
   // to find max -> start at root and go right until you reach the max value
-  max = () => {
+  max() {
     // start at root of tree
     let currentNode = this.root;
 
@@ -78,7 +78,7 @@ class BST {
   }
 
   // takes a value to check to see if value exists in the tree
-  contains = (value) => {
+  contains(value) {
     let currentNode = this.root;
 
     while(currentNode) {
@@ -102,7 +102,7 @@ class BST {
   // in-order
   // left, root, right
   // 2, 3, 12, 15, 28, 36, 39
-  dfsInOrder = () => {
+  dfsInOrder() {
     let result = [];
 
     const traverse = node => {
@@ -124,7 +124,7 @@ class BST {
   // pre-order
   // root -> left -> right
   // 15, 3, 2, 12, 36, 28, 39
-  dfsPreOrder = () => {
+  dfsPreOrder() {
     let result = [];
 
     const traverse = node => {
@@ -147,7 +147,7 @@ class BST {
   // post-order
   // left, right, root
   // 2, 12, 3, 28, 39, 36, 15
-  dfsPostOrder = () => {
+  dfsPostOrder() {
     let result = [];
 
     const traverse = node => {
@@ -170,7 +170,7 @@ class BST {
   // breadth first search - level by level
   // use queue
   // 15, 3, 36, 2, 12, 28, 39
-  bfs = () => {
+  bfs() {
     let result = [];
     let queue = [];
 

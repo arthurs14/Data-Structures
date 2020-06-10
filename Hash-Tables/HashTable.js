@@ -25,13 +25,13 @@ class HashTable {
   }
 
   // add key and value to the buckets
-  insert = (key, value) => {
+  insert(key, value) {
     let idx = hash(key, this.size);
     this.buckets[idx].set(key, value);
   }
 
   // deletes value by finding the key in the buckets
-  remove = (key) => {
+  remove(key) {
     let idx = hash(key, this.size);
     let deleted = this.buckets[idx].get(key);
     this.buckets[idx].delete(key);
@@ -39,7 +39,7 @@ class HashTable {
   }
 
   // finds the key to return the value
-  search = (key) => {
+  search(key) {
     let idx = hash(key, this.size);
     return this.buckets[idx].get(key);
   }

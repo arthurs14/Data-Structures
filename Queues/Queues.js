@@ -9,13 +9,13 @@ class Queue {
   tail = 0;
 
   // add element to storage by the tail
-  enqueue = (element) => {
+  enqueue(element) {
     this.storage[this.tail] = element;
     this.tail++;
   }
 
   // remove element from head of storage
-  dequeue = () => {
+  dequeue() {
     let removed = this.storage[this.head];
     delete this.storage[this.head]; // deletes element
     this.head++; // move head up to next key:value pair

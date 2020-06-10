@@ -8,13 +8,13 @@ class Stack {
   size = 0;
 
   // adds element to stack
-  push = (element) => {
+  push(element) {
     this.size++;
     this.storage[this.size] = element; // at index add element
   }
 
   // delete element off the end of stack
-  pop = () =>  {
+  pop()  {
     let removed = this.storage[this.size];
     delete this.storage[this.size];
     this.size--;
@@ -22,17 +22,17 @@ class Stack {
   }
 
   // shows last element in stack
-  peek = () => {
+  peek() {
     return this.storage[this.size];
   }
 
-  empty = () => {
+  empty() {
     if(storage === null) {
       return;
     }
   }
 
-  getSize = () => {
+  getSize() {
     return this.size;
   }
 }

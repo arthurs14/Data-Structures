@@ -7,7 +7,7 @@ class Array {
   }
 
   // pushes new element to end of array
-  push = (element) => {
+  push(element) {
     // get length to add element at said index
     this.data[this.length] = element;
 
@@ -17,7 +17,7 @@ class Array {
   }
 
   // takes element at the end of array
-  pop = () => {
+  pop(){
     // set item to last element of array
     const item = this.data[this.length - 1];
 
@@ -31,7 +31,7 @@ class Array {
   }
 
   // inserts element at certain index
-  insertAt = (index, item) => {
+  insertAt(index, item) {
     // loop until it reaches index to modify
     for (let i = this.length; i >= index; i--) {
       // sets a new length to the object while opening the modified index
@@ -48,7 +48,7 @@ class Array {
   }
 
   // deletes element at the certain index
-  deleteAt = (index) => {
+  deleteAt(index) {
     // moves everything from the index modified to the right index
     for (let i = index; i < this.length - 1; i++) {
       this.data[i] = this.data[i + 1];
@@ -64,7 +64,7 @@ class Array {
   }
 
   // return element at index
-  getElementAtIndex = (index) => {
+  getElementAtIndex(index) {
     return this.data[index];
   }
 
