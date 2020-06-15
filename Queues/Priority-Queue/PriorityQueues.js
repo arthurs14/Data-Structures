@@ -63,8 +63,10 @@ class PriorityQueue {
     }
     return this.items[0];
    }
-   
-  // isEmpty()
 
+  // checks if queue is empty
+  isEmpty() {
+    return this.items.length === 0;
+  }
   // printPQueue()
 }
