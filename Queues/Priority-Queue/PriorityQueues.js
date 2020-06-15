@@ -62,7 +62,15 @@ class PriorityQueue {
       return 'No elements in queue';
     }
     return this.items[0];
-   }
+  }
+
+  // returns the last element of the queue
+  rear() {
+    if (this.isEmpty()) {
+      return 'No elements in queue';
+    }
+    return this.items[this.items.lenght - 1];
+  }
 
   // checks if queue is empty
   isEmpty() {
