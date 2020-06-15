@@ -55,7 +55,16 @@ class PriorityQueue {
     return this.items.shift();
   }
 
-  // front()
+  // returns the 0th element of the queue
+  front() {
+    // check if elements exists
+    if (this.isEmpty()) {
+      return 'No elements in queue';
+    }
+    return this.items[0];
+   }
+   
   // isEmpty()
+
   // printPQueue()
 }
