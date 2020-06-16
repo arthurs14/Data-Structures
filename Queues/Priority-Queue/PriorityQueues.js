@@ -76,5 +76,13 @@ class PriorityQueue {
   isEmpty() {
     return this.items.length === 0;
   }
-  // printPQueue()
+
+  // prints elements of the queue by priority of highest to lowest
+  printPQueue() {
+    let str = '';
+    for (let i = 0; i < this.items.length; i++) {
+      str += this.items[i].element + ' ';
+    }
+    return str;
+  }
 }
