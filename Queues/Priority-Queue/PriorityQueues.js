@@ -79,10 +79,15 @@ class PriorityQueue {
 
   // prints elements of the queue by priority of highest to lowest
   printPQueue() {
+    // create empty string to hold queue
     let str = '';
+
+    // loop through array to find elements and concatenate them to string
     for (let i = 0; i < this.items.length; i++) {
       str += this.items[i].element + ' ';
     }
+
+    // returns the whole string of elements spaced out
     return str;
   }
 }
