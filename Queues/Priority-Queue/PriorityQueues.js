@@ -27,14 +27,14 @@ class PriorityQueue {
     let qElement = new QElement(element, priority);
     let contain = false;
 
-    console.log('element:', qElement + " "  + qElement.priority);
+    console.log('qElement:', qElement);
 
     // iterate through the entire item array to add element at the correct
     // location of the Queue
-    for (let i = 0; this.items.length; i++) {
+    for (let i = 0; i < this.items.length; i++) {
       if (this.items[i].priority > qElement.priority) {
         // once the correct location found -> add element
-        //splice(start, delete, addItem)
+        // splice(start, delete, addItem)
         this.items.splice(i, 0, qElement);
         contain = true;
         break;
@@ -45,9 +45,6 @@ class PriorityQueue {
     if(!contain) {
       this.items.push(qElement);
     }
-
-    //console.log('queue:', this.items);
-
   }
 
   // remove element from the queue
@@ -112,7 +109,7 @@ pq.enqueue('Stray Kids', 2);
 pq.enqueue('Apink', 1);
 pq.enqueue('Blackpink', 1);
 pq.enqueue('Nature', 2);
-// pq.enqueue('LOONA', 3);
+pq.enqueue('LOONA', 3);
 
 // print the queue
 console.log('queue:', pq.printPQueue());
