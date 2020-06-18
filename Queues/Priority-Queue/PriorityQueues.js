@@ -22,9 +22,9 @@ class PriorityQueue {
 
   // functions to be implemented
   // adds elements to the queue as per priority
-  enqueue() {
+  enqueue(element, priority) {
     // create queue element
-    let qElement = new QElement;
+    let qElement = new QElement(element, priority);
     let contain = false;
 
     // iterate through the entire item array to add element at the correct
@@ -33,6 +33,7 @@ class PriorityQueue {
       if (this.items[i].priority > qElement.priority) {
         // once the correct location found -> add element
         //splice(start, delete, addItem)
+        //console.log('item:', this.items[0].priority);
         this.items.splice(i, 0, qElement);
         contain = true;
         break;
@@ -94,7 +95,7 @@ class PriorityQueue {
 
 
 // create object for queue class
-let pq= new PriorityQueue();
+let pq = new PriorityQueue();
 
 // check that queue is empty prior to adding stuff
 console.log('Queue empty prior to adding:', pq.isEmpty());
@@ -102,3 +103,12 @@ console.log('Queue empty prior to adding:', pq.isEmpty());
 // should return no elements in queue by checking font
 console.log('Queue empty from front:', pq.front());
 
+// add elements to the queue
+pq.enqueue('Stray Kids', 2);
+pq.enqueue('Apink', 1);
+pq.enqueue('Blackpink', 1);
+pq.enqueue('Nature', 2);
+pq.enqueue('LOONA', 3);
+
+// print the queue
+console.log('queue:', pq.printPQueue());
