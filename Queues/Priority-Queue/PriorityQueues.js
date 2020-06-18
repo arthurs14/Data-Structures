@@ -91,3 +91,14 @@ class PriorityQueue {
     return str;
   }
 }
+
+
+// create object for queue class
+let pq= new PriorityQueue();
+
+// check that queue is empty prior to adding stuff
+console.log('Queue empty prior to adding:', pq.isEmpty());
+
+// should return no elements in queue by checking font
+console.log('Queue empty from front:', pq.front());
+
