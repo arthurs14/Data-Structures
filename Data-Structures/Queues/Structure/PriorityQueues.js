@@ -97,10 +97,10 @@ class PriorityQueue {
 let pq = new PriorityQueue();
 
 // check that queue is empty prior to adding stuff
-// console.log('Queue empty prior to adding:', pq.isEmpty());
+console.log('Queue empty prior to adding:', pq.isEmpty());
 
 // should return no elements in queue by checking font
-// console.log('Queue empty from front:', pq.front());
+console.log('Queue empty from front:', pq.front());
 
 // add elements to the queue
 pq.enqueue('Stray Kids', 2);
@@ -111,7 +111,6 @@ pq.enqueue('LOONA', 3);
 
 // print first element in queue
 console.log('first:', pq.front());
-
 
 // print last element in queue
 console.log('last:', pq.rear());
