@@ -27,8 +27,6 @@ class PriorityQueue {
     let qElement = new QElement(element, priority);
     let contain = false;
 
-    console.log('qElement:', qElement);
-
     // iterate through the entire item array to add element at the correct
     // location of the Queue
     for (let i = 0; i < this.items.length; i++) {
@@ -71,7 +69,7 @@ class PriorityQueue {
     if (this.isEmpty()) {
       return 'No elements in queue';
     }
-    return this.items[this.items.lenght - 1];
+    return this.items[this.items.length - 1];
   }
 
   // checks if queue is empty
@@ -110,6 +108,16 @@ pq.enqueue('Apink', 1);
 pq.enqueue('Blackpink', 1);
 pq.enqueue('Nature', 2);
 pq.enqueue('LOONA', 3);
+
+// print first element in queue
+console.log('first:', pq.front());
+
+
+// print last element in queue
+console.log('last:', pq.rear());
+
+// dequeue last element
+console.log('shift:', pq.dequeue());
 
 // print the queue
 console.log('queue:', pq.printPQueue());
