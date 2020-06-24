@@ -32,6 +32,8 @@ const hasBalancedBrackets = (str) => {
   return stack.length === 0;
 };
 
+// Time Complexity: O(n) -> depends on the length of the string
+// Space Complexity: O(1) -> it either has a length of 0 or more
 console.log(hasBalancedBrackets('[][(){}')); // false
 console.log(hasBalancedBrackets('({)}')); // false
 console.log(hasBalancedBrackets('({[]})')); // true
