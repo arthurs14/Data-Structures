@@ -24,6 +24,9 @@ const findByNumber = generateSearcher([
   'Russel Roberts ... 845-613-3905'
 ]);
 
+// Time Complexity: O(n) -> object size will differ by how many entries there are
+// Space Complexity: O(n) -> object will increase in size which is not constant
+
 console.log(findByNumber('399-926-3371')); // 'Tessie Walter ... 399-926-3371'
 console.log(findByNumber('853-712-7819')); // 'Julian Feest PhD ... 853-712-7819'
 console.log(findByNumber('444-899-5147')); // 'Brando Kunde ... 444-899-5147'
