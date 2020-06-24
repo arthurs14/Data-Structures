@@ -17,7 +17,7 @@ const palindrome = (word) => {
   return word === reversedWord;
 };
 
-// Time Complexity: O(1)? -> as you take a value and decrease it always ends at 0?
+// Time Complexity: O(n)? -> the time it takes to get to 0 varies?
 // Space Complexity: O(n) -> strings of same length for checking?
 console.log(palindrome('solos')); // true
 console.log(palindrome('timmy')); // false
