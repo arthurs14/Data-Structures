@@ -16,4 +16,6 @@ const nextInLine = (arr, item) => {
 };
 
 // should get return the value of the first value in array/ line
+// Time Complexity: O(1)? -> you either push to the end or pick from the front?
+// Space Complexity: O(1)? -> you always return a value from the same index?
 console.log(nextInLine(arr, 7)); // 1
