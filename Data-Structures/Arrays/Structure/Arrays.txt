@@ -1,0 +1,13 @@
+When to use Arrays:
+  - when you want to have an ordered list
+  - when you need fast access / insertion and removal (sort of)
+
+Big O of Arrays:
+  - Insertion (depends)
+    - .push() & .pop() from end -> O(1)
+    - .shift() & .unshift() from front -> O(N) -> due to reindexing the array
+  - Removal (depends)
+    - Better from the end
+    - Not good from the front
+  - Searching O(N)
+  - Access N(1)
