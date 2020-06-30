@@ -5,17 +5,17 @@
 */
 
 
+function validAnagram(str1, str2) {
+  if(str1.length !== str2.length) {
+    return false;
+  }
+  return true;
+}
 
-
-
-
-
-
-
-validAnagram(' ', ' '); // true
-validAnagram('aaz', 'zza'); // true
-validAnagram('anagram, nagaram'); // true
-validAnagram('rat', 'car'); // false
-validAnagram('awesome', 'awesom'); // false
-validAnagram('qwerty', 'qeywrt'); // true
-validAnagram('texttwisttime', 'timetwisttext'); // true
+// console.log(validAnagram(' ', ' ')); // true
+// console.log(validAnagram('aaz', 'zza')); // true
+console.log(validAnagram('anagram', 'nagaram')); // true
+console.log(validAnagram('rat', 'car')); // false
+// console.log(validAnagram('awesome', 'awesom')); // false
+// console.log(validAnagram('qwerty', 'qeywrt')); // true
+// console.log(validAnagram('texttwisttime', 'timetwisttext')); // true
