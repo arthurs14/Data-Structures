@@ -5,7 +5,13 @@
 */
 
 const countUniqueValues = (arr) => {
+  // set a counter that adds when a new unique value is found
+  let count = 0;
 
+  // Loop through arr to find unique values
+  for (let i = 0; i < arr.length; i++) {
+
+  }
 };
 
 console.log(countUniqueValues([1,1,1,1,1,2])); // 2
