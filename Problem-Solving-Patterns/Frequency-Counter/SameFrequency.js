@@ -15,19 +15,26 @@ const sameFrequency = (num1, num2) => {
   // create a frequency for one of the numbers;
   let num1Frequency = {}
 
-  // loop over one string and fill object with frequencies
+  // loop over first num string and fill object with frequencies
   for (let i = 0; i < num1ToString.length; i++) {
     num1Frequency[num1ToString[i]] ? num1Frequency[num1ToString[i]]++ : num1Frequency[num1ToString[i]] = 1;
   }
 
-  console.log(num1Frequency);
+  // loop over second num string to see if they have the same amount of numbers
+  for (let i = 0; i < num2ToString.length; i++) {
+    let num = num2ToString[i];
+    if(!num1Frequency[num]) {
+      return false;
+    } else {
+      num1Frequency[num]--;
+    }
+  }
+
+  return true;
 };
 
-sameFrequency(182, 281);
-// console.log(sameFrequency(182, 281)); // true
-// console.log(sameFrequency(34,14)); // false
-// console.log(sameFrequency(3589578, 5879385)); // true
-// console.log(sameFrequency(22,222)); // false
+console.log(sameFrequency(182, 281)); // true
+console.log(sameFrequency(34,14)); // false
+console.log(sameFrequency(3589578, 5879385)); // true
+console.log(sameFrequency(22,222)); // false
 
-// console.log(sameFrequency(-1, 3));
-// console.log(sameFrequency(1, -3));
