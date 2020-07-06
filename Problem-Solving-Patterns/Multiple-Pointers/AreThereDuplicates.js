@@ -8,30 +8,21 @@ const areThereDuplicates = (...values) => {
   // check if array of values is empty
   if (values.length === 0) return false;
 
-  console.log('values', values);
-
   // temporary item place holder
   let value;
 
-  // loop through array to create a frequency table
-  // values.forEach(item => {
-  //   if (item !== value) {
-  //     console.log('item', item);
-  //     value = item;
-  //     console.log('value', value);
-  //   } else if (item === value) {
-  //     return true;
-  //   }
-  //   return false;
-  // });
-
   for (let i = 0; i < values.length; i++) {
+    // check if temporary value has a value
     if (values[i] !== value) {
+      // make a temporary place to hold value
       value = values[i];
     } else if (values[i] === value) {
+      // prior to having the temporary value being held if it already exists
+      // it should indicate it already exists -> a duplicate!
       return true;
     }
   }
+
   return false;
 };
 
