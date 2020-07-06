@@ -13,7 +13,7 @@ const sameFrequency = (num1, num2) => {
   const num2ToString = num2.toString();
 
   // create a frequency for one of the numbers;
-  let num1Frequency = {}
+  let num1Frequency = {};
 
   // loop over first num string and fill object with frequencies
   for (let i = 0; i < num1ToString.length; i++) {
