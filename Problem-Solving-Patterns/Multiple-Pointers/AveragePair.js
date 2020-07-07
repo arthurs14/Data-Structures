@@ -16,8 +16,10 @@ const averagePair = (arr, targetAvg) => {
   while (arr.length >= 2) {
     // find the average of two values
     avg = (arr[0] + arr[1]) / 2;
+
     // remove first value
     arr.shift();
+
     // if avg matches targetAvg then we can return true
     if (avg === targetAvg) return true;
   }
@@ -25,7 +27,7 @@ const averagePair = (arr, targetAvg) => {
   return false;
 };
 
-// console.log(averagePair([1,2,3], 2.5)); // true
-// console.log(averagePair([1,3,3,4,5,6,7,10,12,19], 8)); // false
+console.log(averagePair([1,2,3], 2.5)); // true
+console.log(averagePair([1,3,3,4,5,6,7,10,12,19], 8)); // false
 console.log(averagePair([-1,0,3,4,5,6], 4.1)); // false
-// console.log(averagePair([], 4)); // false
+console.log(averagePair([], 4)); // false
