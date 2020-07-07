@@ -18,7 +18,6 @@ const averagePair = (arr, targetAvg) => {
   // loop while left index is less than right index
   while (left < right) {
     // find the average of two values
-    console.log(`adding ${arr[left]} + ${arr[right]}`);
     avg = (arr[left] + arr[right]) / 2;
 
     // if avg matches targetAvg then we can return true
@@ -38,7 +37,7 @@ const averagePair = (arr, targetAvg) => {
   return false;
 };
 
-// console.log(averagePair([1,2,3], 2.5)); // true
+console.log(averagePair([1,2,3], 2.5)); // true
 console.log(averagePair([1,3,3,4,5,6,7,10,12,19], 8)); // true
-// console.log(averagePair([-1,0,3,4,5,6], 4.1)); // false
-// console.log(averagePair([], 4)); // false
+console.log(averagePair([-1,0,3,4,5,6], 4.1)); // false
+console.log(averagePair([], 4)); // false
