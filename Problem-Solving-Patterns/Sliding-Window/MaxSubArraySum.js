@@ -8,12 +8,35 @@
 * array, but [100,300] is not.
 */
 
-const maxSubarraySum = () => {
+const maxSubarraySum = (arr, num) => {
+  // set maxSum and tempSum
+  let maxSum = 0;
+  let tempSum = 0;
 
+  // check to see if array is long enough for further test
+  if (arr.length < num ) return null;
+
+  // get the first sum
+  for (let i = 0; i < num; i++) {
+    maxSum += arr[i];
+  }
+
+  // set tempSum to maxSum
+  tempSum = maxSum;
+
+  // loop through the rest of the array where the index is left off from first
+  // sum
+  for (let i = num; i < arr.length; i++) {
+    // subract the leading index from the total then add the new value
+    tempSum = tempSum - arr[i - num] + arr[i];
+
+    // then find the max of the new sum
+    maxSum = Math.max(maxSum, tempSum);
+  }
 };
-
-console.log(maxSubarraySum([100,200,300,400], 2)); // 700
-console.log(maxSubarraySum([1,4,2,10,23,3,1,0,20], 4)); // 39
-console.log(maxSubarraySum([-3,4,0,-2,6,-1], 2)); // 5
-console.log(maxSubarraySum([3,-2,7,-4,1,-1,4,-2,1], 2)); // 5
-console.log(maxSubarraySum([2,3], 3)); // null
+maxSubarraySum([100,200,300,400], 2);
+// console.log(maxSubarraySum([100,200,300,400], 2)); // 700
+// console.log(maxSubarraySum([1,4,2,10,23,3,1,0,20], 4)); // 39
+// console.log(maxSubarraySum([-3,4,0,-2,6,-1], 2)); // 5
+// console.log(maxSubarraySum([3,-2,7,-4,1,-1,4,-2,1], 2)); // 5
+// console.log(maxSubarraySum([2,3], 3)); // null
