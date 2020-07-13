@@ -2,6 +2,7 @@
 // 1. Base Case -> what stops the recursion
 // 2. Different Input -> call the same function over and over, different data
 
+// simple coutdown function
 const countDown = num => {
   if (num <= 0) {
     console.log('All Done!');
@@ -13,16 +14,23 @@ const countDown = num => {
   countDown(num);
 };
 
-// countDown(5);
-
+// adds all the numbers in a certain range
 const sumRange = num => {
   if (num === 1) return 1;
   return num + sumRange(num - 1);
 };
 
+// Factorial
+const factorial = num => {
+  if (num === 1) return 1;
+  return num * factorial(num - 1);
+};
 
 // countDown Example
 // coundtDown(5);
 
 // sumRange Example:
-console.log(sumRange(4));
+// console.log(sumRange(4));
+
+// factorial Example:
+console.log(factorial(3));
