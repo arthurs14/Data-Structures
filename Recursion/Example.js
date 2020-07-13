@@ -20,4 +20,9 @@ const sumRange = num => {
   return num + sumRange(num - 1);
 };
 
+
+// countDown Example
+// coundtDown(5);
+
+// sumRange Example:
 console.log(sumRange(4));
