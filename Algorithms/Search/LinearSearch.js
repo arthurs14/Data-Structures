@@ -4,13 +4,9 @@
 * return -1
 */
 
-const LinearSearch = (arr, value) => {
-  // check if array has any values to begin with
-  if (arr.length === 0) return -1;
+const linearSearch = (arr, value) => {
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === value) {
-      return i;
-    }
+    if (arr[i] === value) return i;
   }
   return -1;
 };
