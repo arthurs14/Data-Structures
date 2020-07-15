@@ -5,9 +5,19 @@
 */
 
 const LinearSearch = (arr, value) => {
-
+  // check if array has any values to begin with
+  if (arr.length === 0) return -1;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === value) {
+      return i;
+    }
+  }
+  return -1;
 };
 
 console.log(LinearSearch([1,2,3,4], 3)); // index: 2
 console.log(LinearSearch([1,3,5,7,9], 7)); // index: 3
 console.log(LinearSearch([2,4,6,8,10], 3)); // -1
+console.log(LinearSearch([10, 15, 20, 25, 30], 15)); // 1
+console.log(LinearSearch([100], 100)); // 0
+
