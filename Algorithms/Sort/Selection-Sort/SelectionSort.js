@@ -2,6 +2,8 @@
 * Similar to bubble sort, but instead of first
 * placing large values into sorted position,
 * it places small values into sorted position
+* Benefit over buble:
+* making one swap per loop instead of multiple swaps
 */
 
 const selectionSort = (arr) => {
