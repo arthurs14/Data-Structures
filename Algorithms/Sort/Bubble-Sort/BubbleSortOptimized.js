@@ -1,3 +1,7 @@
+// If you know your list is somewhat already sorted
+// Then putting in noswaps reduces the time to sort
+// O(n)
+
 const bubbleSort = (arr) => {
   let noSwaps;
   for (let i = arr.length; i > 0; i--) {
