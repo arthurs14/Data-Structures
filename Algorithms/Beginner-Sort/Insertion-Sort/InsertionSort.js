@@ -1,3 +1,8 @@
+/* 
+* Works well when data is coming in live
+*/
+
+
 const insertionSort = (arr) => {
   // moves through array starting at index 1
   for (let i = 1; i < arr.length; i++) {
