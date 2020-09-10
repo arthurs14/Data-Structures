@@ -10,27 +10,30 @@
 // Merge two arrays into one sorted array (least to greatest)
 const MergeArrays = (arr1, arr2) => {
   let arr = [];
-  let arrLength = 0;
-  let arrCount = 0;
+  let i = 0;
+  let j = 0;
 
-  console.log(arr1.length);
-
-  while (arrLength <= arr1.length - 1) {
-    if (arr1[arrLength] < arr2[arrCount]) {
-      arr.push(arr1[arrLength]);
-      arrLength++;
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] < arr2[j]) {
+      arr.push(arr1[i]);
+      i++;
+    } else {
+      arr.push(arr2[j]);
+      j++;
     }
+  }
 
-    if (arr1[arrLength] > arr2[arrCount]) {
-      arr.push(arr2[arrCount]);
-      arrCount++;
-    }
+  while (i < arr1.length) {
+    arr.push(arr1[i]);
+    i++;
+  }
 
-    arr.push(arr2[arrCount]);
-    arrCount++;
+  while (j < arr2.length) {
+    arr.push(arr2[j]);
+    j++;
   }
 
   return arr;
 }
 
-console.log(MergeArrays([1, 10, 50], [2, 14, 99, 100]));
+console.log(MergeArrays([2, 14, 99, 100], [1, 10, 50]));
