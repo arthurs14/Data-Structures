@@ -13,15 +13,26 @@ const MergeArrays = (arr1, arr2) => {
   let arrLength = 0;
   let arrCount = 0;
 
-  while (arrLength !== arr1.length - 1) {
-    if (arr1[arrLength] < arr2[arrLength]) {
+  console.log(arr1.length);
+
+  while (arrLength <= arr1.length - 1) {
+    if (arr1[arrLength] < arr2[arrCount]) {
       arr.push(arr1[arrLength]);
       arrLength++;
+
+      console.log('*******IF BLOCK*******')
+      console.log('arrLength:', arrLength);
+      console.log('arr:', arr);
+      console.log('*******IF BLOCK*******')
     } else {
+      arr.push(arr2[arrCount]);
+      arrCount++;
 
+      console.log('*******ELSE BLOCK*******');
+      console.log('arrCount:', arrCount);
+      console.log('arr:', arr);
+      console.log('*******ELSE BLOCK*******');
     }
-
-
   }
 
   return arr;
