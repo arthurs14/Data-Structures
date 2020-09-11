@@ -30,6 +30,7 @@ class LinkedList {
     // set the head of the list with the new data along with the old data
     // increase linkedlist size
     this.head = new Node(val, this.head);
+    console.log(this.head);
     this.size++;
   }
 
