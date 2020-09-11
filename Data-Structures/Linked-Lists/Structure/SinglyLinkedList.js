@@ -38,6 +38,8 @@ class SinglyLinkedList {
 
     if (!this.head) return undefined;
 
+    // reads through linkedlist and assigns newtail to be
+    // the value before the actual tail
     while (current.next) {
       newTail = current;
       current = current.next;
@@ -47,11 +49,30 @@ class SinglyLinkedList {
     this.tail.next = null;
     this.length--;
 
+    // quick fix for showing the right head and tail values
     if (this.length === 0) {
       this.head = null;
       this.tail = null;
     }
+
     return current.val;
+  }
+
+  // shift removes from the beginning of the list
+  shift() {
+    let currentHead = this.head;
+
+    if (!this.head) return undefined;
+
+    this.head = currentHead.next;
+    this.length--;
+
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+
+    return currentHead.val;
   }
 }
 
@@ -60,4 +81,7 @@ list.push('Hello');
 list.push('Goodbye');
 list.push('!');
 
-console.log(list.pop());
+console.log(list);
+
+console.log(list.shift());
+console.log(list);
