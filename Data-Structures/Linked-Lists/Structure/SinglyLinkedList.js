@@ -81,7 +81,7 @@ list.push('Hello');
 list.push('Goodbye');
 list.push('!');
 
-console.log(list);
+console.log('List:', list);
 
-console.log(list.shift());
-console.log(list);
+console.log('Deleted Value:', list.shift());
+console.log('List:', list);
