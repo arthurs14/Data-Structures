@@ -1,12 +1,16 @@
-// PROS: insert and delete can be quick
-// CONS: slow to get nth element O(n) linear time
-
-// Data structure: { data: 100, next: { data: 200 } }
-
+/* 
+* Linked Lists consist of nodes, and each node has a value
+* and a pointer to another node or null
+* 
+* PROS: insert and delete can be quick
+* CONS: slow to get nth element O(n) linear time
+* 
+* Data structure: { data: 100, next: { data: 200 } }
+*/
 
 // Example //
 class Node {
-  constructor (data, next = null) {
+  constructor(data, next = null) {
     this.data = data;
     this.next = next;
     // creates an object { data: data, next: null }
@@ -16,15 +20,16 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null; // list is empty
+    this.tail = null; // must have a tail
     this.size = 0; // zero by default
   }
 
   // Insert first node
   // If other nodes exists, it will put in front
-  insertFirst(data) {
+  insertFirst(val) {
     // set the head of the list with the new data along with the old data
     // increase linkedlist size
-    this.head = new Node(data, this.head);
+    this.head = new Node(val, this.head);
     this.size++;
   }
 
@@ -36,14 +41,14 @@ class LinkedList {
     let current;
 
     // If empty, make it the head
-    if(!this.head) {
+    if (!this.head) {
       this.head = node;
     } else {
       // if head node exists, set current to head
       current = this.head;
 
       // traverse the list
-      while(current.next) {
+      while (current.next) {
         current = current.next;
       }
 
@@ -64,7 +69,7 @@ class LinkedList {
     }
 
     // if first index (0)
-    if(index === 0) {
+    if (index === 0) {
       this.insertFirst(data);
       return;
     }
@@ -76,7 +81,7 @@ class LinkedList {
     current = this.head;
     let count = 0;
 
-    while(count < index) {
+    while (count < index) {
       previous = current; // node before index
       count++;
       current = current.next; // node after index
@@ -93,8 +98,8 @@ class LinkedList {
     let count = 0;
 
     // traverse list
-    while(current) {
-      if(count === index) {
+    while (current) {
+      if (count === index) {
         console.log(current.data); // show value at index
       }
       count++; // increase until index reached
@@ -107,7 +112,7 @@ class LinkedList {
   // Remove at index
   removeAt(index) {
     // check if index is in range
-    if(index > 0 && index > this.size) {
+    if (index > 0 && index > this.size) {
       return;
     }
 
@@ -116,7 +121,7 @@ class LinkedList {
     let count = 0;
 
     // if index is first node
-    if(index === 0) {
+    if (index === 0) {
       this.head = current.next;
     } else {
       // if index is not first node
@@ -143,7 +148,7 @@ class LinkedList {
     let current = this.head; // current node
 
     // loop through nodes
-    while(current) {
+    while (current) {
       console.log(current.data);
       current = current.next;
     }
