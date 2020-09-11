@@ -1,6 +1,6 @@
 class Node {
   constructor(val) {
-    this.val = data;
+    this.val = val;
     this.next = null;
     // creates an object { data: data, next: null }
   }
@@ -30,4 +30,34 @@ class SinglyLinkedList {
     // increase length by 1
     this.length++;
   }
+
+  // removes from the end of the list
+  pop() {
+    let current = this.head;
+    let newTail = current;
+
+    if (!this.head) return undefined;
+
+    while (current.next) {
+      newTail = current;
+      current = current.next;
+    }
+
+    this.tail = newTail;
+    this.tail.next = null;
+    this.length--;
+
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return current.val;
+  }
 }
+
+let list = new SinglyLinkedList();
+list.push('Hello');
+list.push('Goodbye');
+list.push('!');
+
+console.log(list.pop());
