@@ -1,6 +1,6 @@
 # Data Structures and Algorithms
 
-Using JavaScript to understand Data Structures and Algorithms in order to self
+Using JavaScript and Java to understand Data Structures and Algorithms in order to self
 teach myself computer science basics and to help me prepare for technical
 interviews.
 
