@@ -6,4 +6,4 @@ interviews.
 
 ## To Run Examples
 You may use an IDE like VS Code and run it there or open a repl or any other
-JavaScript code editor and run it.
+JavaScript/ Java code editor and run it.
