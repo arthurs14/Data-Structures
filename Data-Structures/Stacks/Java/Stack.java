@@ -1,5 +1,5 @@
 public class Stack {
-  int stack [];
+  int stack[];
   int top;
   int capacity;
 
@@ -17,14 +17,34 @@ public class Stack {
 
   // pops off the last item on the stack and returns it
   public int pop() {
-    int item = stack[top];
+    int item;
     top--;
+    item = stack[top];
+    stack[top] = 0;
     return item;
   }
 
   // returns the top element
   public int peek() {
-    return stack[top];
+    int item;
+    item = stack[top - 1];
+    return item;
+  }
+
+  public int[] sort(Stack stack) {
+    Stack sorted = new Stack(capacity);
+
+    while(!stack.isEmpty()) {
+      int tmp = stack.pop();
+
+      while (!sorted.isEmpty() && sorted.peek() > tmp ) {
+        stack.push(sorted.pop());
+      }
+
+      sorted.push(tmp);
+    }
+
+    return tmpStack;
   }
 
   public void show() {
@@ -36,8 +56,14 @@ public class Stack {
   public static void main(String[] args) {
     Stack stack = new Stack(5);
     stack.push(5);
+    stack.push(9);
+    stack.push(8);
     stack.push(6);
     stack.push(7);
-    stack.show();
+    //System.out.println(stack.pop());
+    //stack.show();
+    //System.out.println(stack.peek());
+    int[] test = stack.sort(stack);
+    System.out.println(test);
   }
 }
