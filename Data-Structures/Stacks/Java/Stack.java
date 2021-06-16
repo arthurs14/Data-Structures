@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Stack {
   int stack[];
   int top;
@@ -31,7 +33,7 @@ public class Stack {
     return item;
   }
 
-  public int[] sort(Stack stack) {
+  public Stack sort(Stack stack) {
     Stack sorted = new Stack(capacity);
 
     while(!stack.isEmpty()) {
@@ -44,7 +46,7 @@ public class Stack {
       sorted.push(tmp);
     }
 
-    return tmpStack;
+    return sorted;
   }
 
   public void show() {
@@ -63,7 +65,9 @@ public class Stack {
     //System.out.println(stack.pop());
     //stack.show();
     //System.out.println(stack.peek());
-    int[] test = stack.sort(stack);
-    System.out.println(test);
+    Stack sorted = sort(stack);
+    while (!sorted.isEmpty()) {
+      System.out.println(sorted.pop() + " ");
+    }
   }
 }
